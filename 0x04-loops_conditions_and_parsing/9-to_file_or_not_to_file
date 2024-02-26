@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# gives info about school file
 
 school="$(pwd)/school"
 
