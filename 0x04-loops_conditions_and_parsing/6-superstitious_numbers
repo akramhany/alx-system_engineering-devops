@@ -11,11 +11,13 @@ while [ $i -le 20 ]; do
 		4)
 			echo "bad luck from China"
 			;;
+
 		9)
 			echo "bad luck from Japan"
 			;;
+
 		17)
-			echo "bad luck from italy"
+			echo "bad luck from Italy"
 			;;
 	esac
 
