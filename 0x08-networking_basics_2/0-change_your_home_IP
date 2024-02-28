@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# a bash script that configures an Ubuntu server
+
+
+cat /etc/hosts | grep -v localhost > ~/hosts.new
+
+echo -e "127.0.0.2\tlocalhost" >> ~/hosts.new
+echo -e "8.8.8.8\tfacebook.com" >> ~/hosts.new
+
+cp -f ~/hosts.new /etc/hosts
