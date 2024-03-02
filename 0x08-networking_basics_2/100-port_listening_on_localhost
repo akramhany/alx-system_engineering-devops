@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # a script that uses telnet to connect to a server (local host)
 
-nc -l -s localhost -p 98
+nc -l -p 98
