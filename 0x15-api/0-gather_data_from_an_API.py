@@ -60,7 +60,7 @@ def solution(empId):
     message2 = f"({numOfDoneTasks}/{totalNumOfTasks}):"
     print(message1 + message2)
     for title in titles:
-        print(f"     {title}")
+        print(f"\t {title}")
 
 
 if __name__ == "__main__":
