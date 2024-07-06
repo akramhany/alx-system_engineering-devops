@@ -8,15 +8,7 @@ subreddit.
 import requests
 
 
-BASE_URL = 'https://www.reddit.com/'
-
-
-def get_mod_hashes():
-    "returns the mod_hashes of reddit api"
-
-    r = requests.get(BASE_URL + '/api/me.json')
-
-    return r.json()
+BASE_URL = 'http://www.reddit.com/'
 
 
 def number_of_subscribers(subreddit):
