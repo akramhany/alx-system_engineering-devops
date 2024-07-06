@@ -20,5 +20,12 @@ def number_of_subscribers(subreddit):
         'http://www.reddit.com/r/{}/about.json'.format(subreddit),
         headers=headers)
 
+    if r.status_code == 404:
+        return 0
+
+    for res in r.history:
+        if res.status_code == 404:
+            return 0
+
     subscribers_count = r.json().get('data', {}).get('subscribers', 0)
     return subscribers_count

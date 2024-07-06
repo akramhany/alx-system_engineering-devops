@@ -11,13 +11,21 @@ def top_ten(subreddit):
 
     r = requests.get('https://www.reddit.com/r/{}/hot.json'.format(subreddit),
                      headers={'User-Agent': 'Myscript for 10 hottest posts'},
-                     params={'limit': 10}, allow_redirects=False)
+                     params={'limit': 10})
 
-    if r.status_code >= 300:
+    if r.status_code == 404:
         print('None')
         return
 
+    for res in r.history:
+        if res.status_code == 404:
+            print('None')
+            return
+
     posts = r.json().get('data', {}).get('children', [])
+
+    if not posts:
+        print('None')
 
     for post in posts:
         print(post.get('data', {}).get('title'))
