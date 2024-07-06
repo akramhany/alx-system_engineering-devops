@@ -21,4 +21,5 @@ def number_of_subscribers(subreddit):
         headers=headers)
 
     subscribers_count = r.json().get('data', {}).get('subscribers', 0)
+    print('OK')
     return subscribers_count
